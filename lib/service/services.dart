@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import 'model.dart';
+import '../Model/model.dart';
 
 class NewService {
   String token = "67be6db130604ff2adf11936b9779263";
@@ -22,4 +22,6 @@ class NewService {
       throw Exception("Failed to load data");
     }
   }
+
+
 }

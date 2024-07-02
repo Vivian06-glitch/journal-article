@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'model.dart';
+import '../Model/model.dart';
 
 class NewCard extends StatelessWidget {
   final List<Article> news;
@@ -12,22 +12,23 @@ class NewCard extends StatelessWidget {
     return ListView.builder(
         itemCount: news.length,
         itemBuilder: (context, index) {
+          var item = news[index];
           return Card(
               margin: const EdgeInsets.all(8),
               child: Column(
                 children: [
-                  Image.network(news[index].urlToImage ?? ""),
+                  Image.network(item.urlToImage ?? ""),
                    Padding(
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
-                          Text(news[index].title??"")
+                          Text(item.title??"")
                         ],
                       )),
                   Padding(
                       padding: const EdgeInsets.all(8),
                       child: Column(
-                        children: [Text(news[index].description ?? "")],
+                        children: [Text(item.description ?? "")],
                       )),
                 ],
               ));
