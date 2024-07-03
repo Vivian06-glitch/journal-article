@@ -34,4 +34,31 @@ class NewCard extends StatelessWidget {
               ));
         });
   }
+  @override
+  Widget myBuild(BuildContext context) {
+    return ListView.builder(
+        itemCount: news.length,
+        itemBuilder: (context, index) {
+          var item = news[index];
+          return Card(
+              margin: const EdgeInsets.all(8),
+              child: Column(
+                children: [
+                  Image.network(item.urlToImage ?? ""),
+                  Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        children: [
+                          Text(item.title??"")
+                        ],
+                      )),
+                  Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        children: [Text(item.description ?? "")],
+                      )),
+                ],
+              ));
+        });
+  }
 }

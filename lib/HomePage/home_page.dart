@@ -5,6 +5,7 @@ import 'package:news_app/service/services.dart';
 import 'package:news_app/Widget/widget.dart';
 
 import '../Model/model.dart';
+import '../service/journal_services.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,10 +17,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late Future<List<Article>> futureArticles;
 
+  // @override
+  // void initState(){
+  //   super.initState();
+  //   futureArticles = NewService().getData();
+  // }
+
   @override
   void initState(){
     super.initState();
-    futureArticles = NewService().getData();
+    futureArticles = JournalServices().getData() as Future<List<Article>>;
   }
   @override
   Widget build(BuildContext context) {
