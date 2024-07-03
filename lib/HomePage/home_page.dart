@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:news_app/service/services.dart';
+
 import 'package:news_app/Widget/widget.dart';
 
 import '../Model/model.dart';
