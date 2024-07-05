@@ -7,20 +7,20 @@ class Journal {
 
   final String? status;
   final int? totalResults;
-  final List<Article> articles;
+  final List<Articles> articles;
 
   factory Journal.fromJson(Map<String, dynamic> json){
     return Journal(
       status: json["status"],
       totalResults: json["totalResults"],
-      articles: json["articles"] == null ? [] : List<Article>.from(json["articles"]!.map((x) => Article.fromJson(x))),
+      articles: json["articles"] == null ? [] : List<Articles>.from(json["articles"]!.map((x) => Articles.fromJson(x))),
     );
   }
 
 }
 
-class Article {
-  Article({
+class Articles {
+  Articles({
     required this.source,
     required this.author,
     required this.title,
@@ -40,8 +40,8 @@ class Article {
   final DateTime? publishedAt;
   final String? content;
 
-  factory Article.fromJson(Map<String, dynamic> json){
-    return Article(
+  factory Articles.fromJson(Map<String, dynamic> json){
+    return Articles(
       source: json["source"] == null ? null : Source.fromJson(json["source"]),
       author: json["author"],
       title: json["title"],
